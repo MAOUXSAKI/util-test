@@ -1,0 +1,13 @@
+#!/bin/bash
+
+BASE_URL="http://127.0.0.1:8080/Other/getOnlineFromFep"
+FEP_IP=""
+FEP_PORT="9010"
+PER_PAGE_COUNT="10"
+SORT_TYPE="1"
+TRANSACTION_ID="Test168168"
+
+for (( i=0; i<=14; i++ ))
+do
+  curl -X GET "${BASE_URL}?fepIp=${FEP_IP}&fepPort=${FEP_PORT}&curPage=${i}&perPageCount=${PER_PAGE_COUNT}&sortType=${SORT_TYPE}&transactionId=${TRANSACTION_ID}" -H "accept: */*" | grep 
+done
